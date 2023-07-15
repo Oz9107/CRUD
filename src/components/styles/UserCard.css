@@ -1,0 +1,95 @@
+/* styles/UserCard.css */
+.userCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.userCard {
+  flex: 0 0 calc(33.33% - 10px);
+  background-color: #f4f8ff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #333333;
+  margin-bottom: 30px; /* Ajuste el valor aquí para reducir el espacio entre contenedores */
+}
+
+.userCard:last-child {
+  margin-bottom: 0;
+}
+
+.userCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.userCard h2 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.userCard hr {
+  border: none;
+  border-top: 1px solid #eeeeee;
+  margin: 8px 0;
+}
+
+.userCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.userCard li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.userCard li span:first-child {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.userCard footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userCard button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.userCard i {
+  font-size: 18px;
+  color: #555555;
+}
+
+.userCard p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Hover Styles */
+
+.userCard:hover h2 {
+  color: #2b53af;
+}
+
+.userCard:hover li span:first-child {
+  color: #2b53af;
+}
+
+.userCard:hover button i {
+  color: #2b53af;
+}

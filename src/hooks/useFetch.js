@@ -1,5 +1,6 @@
 //useFetch.js
-import { axios } from "axios";
+//PRIMERO CREAR EL CUSTOM HOOK
+import axios from "axios";
 import { useState } from "react";
 
 const useFetch = (baseUrl) => {
@@ -39,17 +40,17 @@ const useFetch = (baseUrl) => {
   };
 
   //UPDATE
- const updateApi = (path, id , data) => {
-   const url = `${baseUrl}${path}/${id}/`;
-   axios
-     .patch(url, data)
-     .then(res => {
-        console.log(res.data)
-        const infoApiMapped = infoApi.map(e => e.id === id ? res.data : e)
+  const updateApi = (path, id, data) => {
+    const url = `${baseUrl}${path}/${id}/`;
+    axios
+      .patch(url, data)
+      .then((res) => {
+        console.log(res.data);
+        const infoApiMapped = infoApi.map((e) => (e.id === id ? res.data : e));
         setInfoApi(infoApiMapped);
-    })
-     .catch(err => console.log(err))
- }
+      })
+      .catch((err) => console.log(err));
+  };
 
   return [infoApi, getApi, postApi, deleteApi, updateApi];
 };

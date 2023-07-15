@@ -1,0 +1,113 @@
+.formUser_container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0003;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: transfrom 200ms ease;
+  -webkit-transition: transfrom 200ms ease;
+  -moz-transition: transfrom 200ms ease;
+  -ms-transition: transfrom 200ms ease;
+  -o-transition: transfrom 200ms ease;
+}
+.close-form {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+}
+.formUser {
+  width: 100%;
+  max-width: 300px;
+  padding: 1.5em 1.5em 2.5em;
+  border-radius: 0.7em;
+  background-color: aliceblue;
+  -webkit-border-radius: 0.7em;
+  -moz-border-radius: 0.7em;
+  -ms-border-radius: 0.7em;
+  -o-border-radius: 0.7em;
+  position: relative;
+}
+.formUser_title {
+  text-align: center;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+.formUser_group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  margin-bottom: 0.8em;
+}
+.formUse_label {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-left: 1em;
+}
+.formUse_input {
+  padding: 0.4em 0.8em;
+  border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  border: 0.1em solid #aaa;
+}
+.formUser_btn {
+  width: 300px;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: rgb(18, 66, 186);
+  color: white;
+  border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.formUser_btn_form {
+  width: 100%;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: rgb(18, 66, 186);
+  color: white;
+  border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -o-border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formUser_btn:hover {
+  filter: brightness(1.2);
+  -webkit-filter: brightness(1.2);
+}
+.formUser_close {
+  position: absolute;
+  font-size: 1.2rem;
+  cursor: pointer;
+  right: 1.5em;
+  top: 1em;
+}
