@@ -1,4 +1,3 @@
-// FormUser.jsx
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import "./styles/FormUser.css";
@@ -8,7 +7,8 @@ const FormUser = ({
   updateInfo,
   updateUserById,
   setUpdateInfo,
-  handleCloseForm,
+  closeForm,
+  setCloseForm,
 }) => {
   const { register, reset, handleSubmit } = useForm();
 
@@ -17,25 +17,13 @@ const FormUser = ({
   }, [updateInfo]);
 
   const submit = (data) => {
-    if (updateInfo.id) {
+    if (updateInfo) {
       // update
-      updateUserById("/users", updateInfo.id, data)
-        .then(() => {
-          setUpdateInfo({});
-          handleCloseForm();
-        })
-        .catch((error) => {
-          console.error("Error updating user:", error);
-        });
+      updateUserById("/users", updateInfo.id, data);
+      setUpdateInfo();
     } else {
       // create
-      createNewUser("/users", data)
-        .then(() => {
-          handleCloseForm();
-        })
-        .catch((error) => {
-          console.error("Error creating user:", error);
-        });
+      createNewUser("/users", data);
     }
     reset({
       first_name: "",
@@ -46,21 +34,22 @@ const FormUser = ({
     });
   };
 
-  const handleFormClick = (e) => {
-    e.stopPropagation();
+  const handleCloseForm = () => {
+    setCloseForm(true);
   };
 
   return (
-    <div onClick={handleCloseForm} className="formUser_container">
+    <div
+      onClick={handleCloseForm}
+      className={`formUser_container ${closeForm && "close-form"}`}
+    >
       <form
-        onClick={handleFormClick}
+        onClick={(e) => e.stopPropagation()}
         className="formUser"
         onSubmit={handleSubmit(submit)}
       >
-        <h2 className="formUser_title">
-          {updateInfo.id ? "Update" : "New User"}
-        </h2>
-        <div className="formUser_close" onClick={handleCloseForm}>
+        <h2 className="formUser_title">{updateInfo ? "Update" : "New User"}</h2>
+        <div onClick={handleCloseForm} className="formUser_close">
           ❌
         </div>
         <div className="formUser_group">
@@ -109,7 +98,7 @@ const FormUser = ({
           />
         </div>
         <button className="formUser_btn_form " type="submit">
-          {updateInfo.id ? "Update this user" : "Add a new user"}
+          {updateInfo && updateInfo.id ? "Update this user" : "Add a new user"}
         </button>
       </form>
     </div>

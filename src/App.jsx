@@ -7,24 +7,22 @@ import UserCard from "./components/UserCard";
 import FormUser from "./components/FormUser";
 
 function App() {
-  const [updateInfo, setUpdateInfo] = useState({});
-  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [updateInfo, setUpdateInfo] = useState();
+  const [closeForm, setCloseForm] = useState(true);
 
   const baseUrl = "https://users-crud.academlo.tech";
-  const [users, getAllUsers, createNewUser, deleteUserById, updateUserById] =
-    useFetch(baseUrl);
+  const [users, 
+    getAllUsers, createNewUser, 
+    deleteUserById, 
+    updateUserById] =
+    useFetch(baseUrl, setCloseForm);
 
   useEffect(() => {
     getAllUsers("/users");
   }, []);
 
   const handleOpenForm = () => {
-    setIsFormOpen(true);
-  };
-
-  const handleCloseForm = () => {
-    setIsFormOpen(false);
-    setUpdateInfo({});
+    setCloseForm(false);
   };
 
   return (
@@ -32,23 +30,25 @@ function App() {
       <button onClick={handleOpenForm} className="formUser_btn">
         Open Form
       </button>
-      {isFormOpen && (
-        <FormUser
-          createNewUser={createNewUser}
-          updateInfo={updateInfo}
-          updateUserById={updateUserById}
-          setUpdateInfo={setUpdateInfo}
-          handleCloseForm={handleCloseForm}
-        />
-      )}
-      <div className="userCardContainer"> {/* Agrega el contenedor */}
+      <FormUser
+        createNewUser={createNewUser}
+        updateInfo={updateInfo}
+        updateUserById={updateUserById}
+        setUpdateInfo={setUpdateInfo}
+        closeForm={closeForm}
+        setCloseForm={setCloseForm}
+      />
+
+      <div className="userCardContainer">
+        {" "}
+        {/* Agrega el contenedor */}
         {users?.map((user) => (
           <UserCard
             key={user.id}
             user={user}
             deleteUserById={deleteUserById}
             setUpdateInfo={setUpdateInfo}
-            setIsFormOpen={setIsFormOpen}
+            handleOpenForm={handleOpenForm}
           />
         ))}
       </div>

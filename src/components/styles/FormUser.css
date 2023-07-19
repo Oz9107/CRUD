@@ -15,6 +15,7 @@
   -ms-transition: transfrom 200ms ease;
   -o-transition: transfrom 200ms ease;
 }
+
 .close-form {
   transform: scale(0);
   -webkit-transform: scale(0);
@@ -22,6 +23,7 @@
   -ms-transform: scale(0);
   -o-transform: scale(0);
 }
+
 .formUser {
   width: 100%;
   max-width: 300px;
@@ -34,23 +36,27 @@
   -o-border-radius: 0.7em;
   position: relative;
 }
+
 .formUser_title {
   text-align: center;
   margin-bottom: 0.5em;
   font-weight: 500;
 }
+
 .formUser_group {
   display: flex;
   flex-direction: column;
   gap: 0.4em;
   margin-bottom: 0.8em;
 }
-.formUse_label {
+
+.formUser_label {
   font-size: 0.9rem;
   font-weight: 300;
   margin-left: 1em;
 }
-.formUse_input {
+
+.formUser_input {
   padding: 0.4em 0.8em;
   border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
@@ -59,6 +65,7 @@
   -o-border-radius: 0.5em;
   border: 0.1em solid #aaa;
 }
+
 .formUser_btn {
   width: 300px;
   padding-top: 0.6em;
@@ -80,6 +87,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .formUser_btn_form {
   width: 100%;
   padding-top: 0.6em;
@@ -104,10 +112,65 @@
   filter: brightness(1.2);
   -webkit-filter: brightness(1.2);
 }
+
 .formUser_close {
   position: absolute;
   font-size: 1.2rem;
   cursor: pointer;
   right: 1.5em;
   top: 1em;
+}
+
+/* Estilos para el botón Delete */
+#formUser_btn_delete,
+#formUser_btn_update {
+  padding: 0.6em 0.8em;
+  background-color: #1f2aa0;
+  color: white;
+  border-radius: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+}
+
+#formUser_btn_delete:hover,
+#formUser_btn_update:hover {
+  background-color: #0e89e7;
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 8px rgba(233, 12, 12, 0.2);
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -o-transform: translateY(-4px);
+}
+
+/* Media Queries para hacerlo responsive */
+
+/* Estilos para pantallas grandes */
+@media (min-width: 768px) {
+  .formUser {
+    max-width: 500px;
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 576px) and (max-width: 767px) {
+  .formUser {
+    max-width: 400px;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 575px) {
+  .formUser {
+    max-width: 70%;
+  }
 }

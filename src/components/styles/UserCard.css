@@ -12,7 +12,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 16px;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -33,6 +33,7 @@
   margin-bottom: 8px;
   font-size: 18px;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
 .userCard hr {
@@ -51,6 +52,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
+  transition: color 0.3s;
 }
 
 .userCard li span:first-child {
@@ -68,6 +70,7 @@
   border: none;
   cursor: pointer;
   padding: 4px;
+  transition: color 0.3s;
 }
 
 .userCard i {
@@ -81,15 +84,8 @@
 }
 
 /* Hover Styles */
-
-.userCard:hover h2 {
-  color: #2b53af;
-}
-
-.userCard:hover li span:first-child {
-  color: #2b53af;
-}
-
+.userCard:hover h2,
+.userCard:hover li span:first-child,
 .userCard:hover button i {
-  color: #2b53af;
+  color: #17a0d6;
 }
