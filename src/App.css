@@ -1,0 +1,14 @@
+.Title {
+  text-align: left;
+  font-family: Arial rgb(19, 41, 206);
+  font-weight: bold;
+  font-size: 30px;
+  background: #1f8ecf;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.4),
+    0px -1px 1px rgba(0, 0, 0, 0.3);
+  margin: 2rem;
+}

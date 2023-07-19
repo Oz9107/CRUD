@@ -11,10 +11,7 @@ function App() {
   const [closeForm, setCloseForm] = useState(true);
 
   const baseUrl = "https://users-crud.academlo.tech";
-  const [users, 
-    getAllUsers, createNewUser, 
-    deleteUserById, 
-    updateUserById] =
+  const [users, getAllUsers, createNewUser, deleteUserById, updateUserById] =
     useFetch(baseUrl, setCloseForm);
 
   useEffect(() => {
@@ -27,6 +24,7 @@ function App() {
 
   return (
     <div>
+      <h2 className="Title">Users</h2>
       <button onClick={handleOpenForm} className="formUser_btn">
         Open Form
       </button>
