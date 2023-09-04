@@ -1,5 +1,3 @@
-// App.jsx
-
 import { useEffect, useState } from "react";
 import "./App.css";
 import useFetch from "./hooks/useFetch";
@@ -10,13 +8,15 @@ function App() {
   const [updateInfo, setUpdateInfo] = useState();
   const [closeForm, setCloseForm] = useState(true);
 
-  const baseUrl = "https://users-crud.academlo.tech";
+  //const baseUrl = "https://users-crud.academlo.tech";
+  const baseUrl = "https://users-crud-p7h5.onrender.com";
+
   const [users, getAllUsers, createNewUser, deleteUserById, updateUserById] =
     useFetch(baseUrl, setCloseForm);
 
   useEffect(() => {
     getAllUsers("/users");
-  }, []);
+  }, [getAllUsers]);
 
   const handleOpenForm = () => {
     setCloseForm(false);
@@ -35,11 +35,10 @@ function App() {
         setUpdateInfo={setUpdateInfo}
         closeForm={closeForm}
         setCloseForm={setCloseForm}
+        key={updateInfo?.id}
       />
 
       <div className="userCardContainer">
-        {" "}
-        {/* Agrega el contenedor */}
         {users?.map((user) => (
           <UserCard
             key={user.id}

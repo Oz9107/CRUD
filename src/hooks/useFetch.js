@@ -1,12 +1,9 @@
-//useFetch.js
-//PRIMERO CREAR EL CUSTOM HOOK
 import axios from "axios";
 import { useState } from "react";
 
 const useFetch = (baseUrl, setCloseForm) => {
   const [infoApi, setInfoApi] = useState();
 
-  //GET
   const getApi = (path) => {
     const url = `${baseUrl}${path}/`;
     axios
@@ -15,7 +12,6 @@ const useFetch = (baseUrl, setCloseForm) => {
       .catch((err) => console.log(err));
   };
 
-  //POST
   const postApi = (path, data) => {
     const url = `${baseUrl}${path}/`;
     axios
@@ -27,7 +23,7 @@ const useFetch = (baseUrl, setCloseForm) => {
       })
       .catch((err) => console.log(err));
   };
-  //DELETE
+
   const deleteApi = (path, id) => {
     const url = `${baseUrl}${path}/${id}/`;
     axios
@@ -40,11 +36,10 @@ const useFetch = (baseUrl, setCloseForm) => {
       .catch((err) => console.log(err));
   };
 
-  //UPDATE
   const updateApi = (path, id, data) => {
     const url = `${baseUrl}${path}/${id}/`;
     axios
-      .patch(url, data)
+      .put(url, data)
       .then((res) => {
         console.log(res.data);
         const infoApiMapped = infoApi.map((e) => (e.id === id ? res.data : e));

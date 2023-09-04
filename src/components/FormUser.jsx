@@ -13,7 +13,7 @@ const FormUser = ({
   const { register, reset, handleSubmit } = useForm();
 
   useEffect(() => {
-    reset(updateInfo);
+    reset(updateInfo || {}); // Asegurarse de que updateInfo sea un objeto válido
   }, [updateInfo]);
 
   const submit = (data) => {
@@ -32,6 +32,7 @@ const FormUser = ({
       password: "",
       birthday: "",
     });
+    setCloseForm(true); // Agregado para cerrar el formulario después de la acción
   };
 
   const handleCloseForm = () => {
