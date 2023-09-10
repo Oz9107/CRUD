@@ -8,8 +8,8 @@ function App() {
   const [updateInfo, setUpdateInfo] = useState();
   const [closeForm, setCloseForm] = useState(true);
 
-  //const baseUrl = "https://users-crud.academlo.tech";
-  const baseUrl = "https://users-crud-p7h5.onrender.com";
+  const baseUrl = "https://users-crud.academlo.tech";
+  //const baseUrl = "https://users-crud-p7h5.onrender.com";
 
   const [users, getAllUsers, createNewUser, deleteUserById, updateUserById] =
     useFetch(baseUrl, setCloseForm);
